@@ -161,8 +161,8 @@
             </mdb>
             <pools>
                 <bean-instance-pools>
-                    <strict-max-pool name="slsb-strict-max-pool" max-pool-size="20" instance-acquisition-timeout="5" instance-acquisition-timeout-unit="MINUTES"/>
-                    <strict-max-pool name="mdb-strict-max-pool" max-pool-size="20" instance-acquisition-timeout="5" instance-acquisition-timeout-unit="MINUTES"/>
+                    <strict-max-pool name="slsb-strict-max-pool" max-pool-size="200" instance-acquisition-timeout="5" instance-acquisition-timeout-unit="MINUTES"/>
+                    <strict-max-pool name="mdb-strict-max-pool" max-pool-size="200" instance-acquisition-timeout="5" instance-acquisition-timeout-unit="MINUTES"/>
                 </bean-instance-pools>
             </pools>
             <caches>
@@ -384,22 +384,22 @@
 <!-- AGREGADO DESDE AQUI -->
 		    <address-setting match="jms.queue.facturasFirmadasQueue">
 			<dead-letter-address>jms.queue.documentosFallidosQueue</dead-letter-address>
-			<redelivery-delay>7200000</redelivery-delay>
-			<max-delivery-attempts>12</max-delivery-attempts>
+			<redelivery-delay>300000</redelivery-delay>
+			<max-delivery-attempts>36</max-delivery-attempts>
 		    </address-setting>
 		    <address-setting match="jms.queue.consultasAutorizacionQueue">
 			<dead-letter-address>jms.queue.documentosFallidosQueue</dead-letter-address>
-			<redelivery-delay>7200000</redelivery-delay>
-			<max-delivery-attempts>12</max-delivery-attempts>
+			<redelivery-delay>600000</redelivery-delay>
+			<max-delivery-attempts>18</max-delivery-attempts>
 		    </address-setting>
 		    <address-setting match="jms.queue.resultadosAutorizacionQueue">
 			<dead-letter-address>jms.queue.fallosActualizacionAutorizacionQueue</dead-letter-address>
-			<redelivery-delay>7200000</redelivery-delay>
-			<max-delivery-attempts>12</max-delivery-attempts>
+			<redelivery-delay>300000</redelivery-delay>
+			<max-delivery-attempts>18</max-delivery-attempts>
 		    </address-setting>
 		    <address-setting match="jms.queue.enviosDocumentoEmailQueue">
 			<dead-letter-address>jms.queue.fallosEnvioDocumentoEmailQueue</dead-letter-address>
-			<redelivery-delay>7200000</redelivery-delay>
+			<redelivery-delay>300000</redelivery-delay>
 			<max-delivery-attempts>12</max-delivery-attempts>
 		    </address-setting>
 <!-- EINVO: AGREGADO HASTA ACA -->
