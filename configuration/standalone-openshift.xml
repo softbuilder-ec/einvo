@@ -266,7 +266,7 @@
                 <protocol type="FD_SOCK" socket-binding="jgroups-udp-fd"/>
                 <protocol type="FD"/>
                 <protocol type="VERIFY_SUSPECT"/>
-                
+
                 <protocol type="pbcast.NAKACK"/>
                 <protocol type="UNICAST2"/>
                 <protocol type="pbcast.STABLE"/>
@@ -284,7 +284,7 @@
                 <protocol type="FD_SOCK" socket-binding="jgroups-tcp-fd"/>
                 <protocol type="FD"/>
                 <protocol type="VERIFY_SUSPECT"/>
-                
+
                 <protocol type="pbcast.NAKACK"/>
                 <protocol type="UNICAST2"/>
                 <protocol type="pbcast.STABLE"/>
@@ -384,23 +384,23 @@
 <!-- AGREGADO DESDE AQUI -->
 		    <address-setting match="jms.queue.facturasFirmadasQueue">
 			<dead-letter-address>jms.queue.documentosFallidosQueue</dead-letter-address>
-			<redelivery-delay>20000</redelivery-delay>
-			<max-delivery-attempts>3</max-delivery-attempts>
+			<redelivery-delay>7200000</redelivery-delay>
+			<max-delivery-attempts>12</max-delivery-attempts>
 		    </address-setting>
 		    <address-setting match="jms.queue.consultasAutorizacionQueue">
 			<dead-letter-address>jms.queue.documentosFallidosQueue</dead-letter-address>
-			<redelivery-delay>20000</redelivery-delay>
-			<max-delivery-attempts>15</max-delivery-attempts>
+			<redelivery-delay>7200000</redelivery-delay>
+			<max-delivery-attempts>12</max-delivery-attempts>
 		    </address-setting>
 		    <address-setting match="jms.queue.resultadosAutorizacionQueue">
 			<dead-letter-address>jms.queue.fallosActualizacionAutorizacionQueue</dead-letter-address>
-			<redelivery-delay>20000</redelivery-delay>
-			<max-delivery-attempts>3</max-delivery-attempts>
+			<redelivery-delay>7200000</redelivery-delay>
+			<max-delivery-attempts>12</max-delivery-attempts>
 		    </address-setting>
 		    <address-setting match="jms.queue.enviosDocumentoEmailQueue">
 			<dead-letter-address>jms.queue.fallosEnvioDocumentoEmailQueue</dead-letter-address>
-			<redelivery-delay>20000</redelivery-delay>
-			<max-delivery-attempts>3</max-delivery-attempts>
+			<redelivery-delay>7200000</redelivery-delay>
+			<max-delivery-attempts>12</max-delivery-attempts>
 		    </address-setting>
 <!-- EINVO: AGREGADO HASTA ACA -->
                 </address-settings>
@@ -475,7 +475,7 @@
 		        <entry name="java:jboss/exported/jms/einvo/fallosEnviosDocumentoEmailQueue"/>
 		        <durable>true</durable>
 		    </jms-queue>
-<!-- EINVO: HASTA ACA-->                    
+<!-- EINVO: HASTA ACA-->
                 </jms-destinations>
             </hornetq-server>
         </subsystem>
@@ -505,7 +505,7 @@
                         <login-module code="RealmDirect" flag="required">
                             <module-option name="password-stacking" value="useFirstPass"/>
                         </login-module>
-<!-- EINVO: AGREGADO DESDE AQUI -->                    
+<!-- EINVO: AGREGADO DESDE AQUI -->
  		        <login-module code="RealmUsersRoles" flag="required">
 <!--
 			    <module-option name="usersProperties" value="${jboss.server.config.dir}/application-users.properties"/>
@@ -514,7 +514,7 @@
 		            <module-option name="realm" value="Administration"/>
 		            <module-option name="password-stacking" value="useFirstPass"/>
 		        </login-module>
-<!-- EINVO: HASTA ACA-->                    
+<!-- EINVO: HASTA ACA-->
 
                     </authentication>
                 </security-domain>
