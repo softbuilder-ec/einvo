@@ -108,6 +108,9 @@
             <logger category="org.hornetq.jms">
                 <level name="ERROR"/>
             </logger>
+            <logger category="org.hornetq.core.client">
+                <level name="ERROR"/>
+            </logger>
             <root-logger>
                 <level name="INFO"/>
                 <handlers>
